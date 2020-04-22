@@ -1,33 +1,26 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 
-public class Prenda {
-
-    private Color colorPrimario;
-    private Color colorSecundario;
-    private Tela tela;
-    private TipoPrenda tipoPrenda;
+public class Prenda extends Borrador{
 
 
-    public Prenda(TipoPrenda tipoPrenda, Tela tela,Color colorPrimario, Color colorSecundario)throws Exception{
-        validarAtributos(new ArrayList<>(Arrays.asList(tipoPrenda,tela,colorPrimario,colorSecundario)));
-        this.tipoPrenda = tipoPrenda;
-        this.colorPrimario = colorPrimario;
-        this.colorSecundario = colorSecundario;
+    public Prenda(BuilderPrenda builder) throws CreadorPrendaException{
+        validarAtributos(new ArrayList<>(Arrays.asList(builder.getTipoPrenda(),builder.getTela(),builder.getColorPrimario(),builder.getTrama())));
+        this.tipoPrenda = builder.getTipoPrenda();
+        this.tela = builder.getTela();
+        this.colorPrimario = builder.getColorPrimario();
+        this.colorSecundario = builder.getColorSecundario();
+        this.trama = builder.getTrama();
     }
 
-    public Prenda(TipoPrenda tipoPrenda, Tela tela, Color colorPrimario)throws Exception {
-        validarAtributos(new ArrayList<>(Arrays.asList(tipoPrenda,tela,colorPrimario)));
-        this.tipoPrenda = tipoPrenda;
-        this.colorPrimario = colorPrimario;
-        this.colorSecundario = null;
-    }
 
     public Categoria categoria(){
         return tipoPrenda.categoria();
+    }
+
+    public TipoPrenda tipoPrenda(){
+        return tipoPrenda;
     }
 
     public void validarAtributos(ArrayList<Object> atributos)throws CreadorPrendaException{
@@ -35,5 +28,7 @@ public class Prenda {
             throw new CreadorPrendaException("Los faltan atributos para crear la prenda");
         }
     }
+
+
 
 }

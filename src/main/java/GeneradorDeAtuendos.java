@@ -31,12 +31,20 @@ public class GeneradorDeAtuendos {
         return atuendos;
         }
 
-        private boolean esCombinacionValida(Set<Prenda> atuendo){
-            return atuendo.stream().allMatch(prenda -> categoriasObligatorias.contains(prenda.categoria()));
+        private boolean esCombinacionValida(Set<Prenda> prendas){
+            return esUnAtuendo(prendas) && tiposDiferentes(prendas);
         }
 
         private Set<Set<Prenda>> filtrarAtuendosValidos(Set<Set<Prenda>> todasLasCombinaciones){
             return todasLasCombinaciones.stream().filter(this::esCombinacionValida).collect(Collectors.toSet());
+        }
+
+        private boolean esUnAtuendo(Set<Prenda> prendas){
+           return categoriasObligatorias.stream().allMatch(categoria -> prendas.stream().anyMatch(prenda -> prenda.categoria()==categoria));
+        }
+
+        private boolean tiposDiferentes(Set<Prenda> prendas){
+            return prendas.size() == prendas.stream().map(prenda -> prenda.tipoPrenda()).distinct().count();
         }
 
 }

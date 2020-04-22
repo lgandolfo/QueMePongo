@@ -1,46 +1,83 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class TipoPrendaFactory {
 
-    public TipoPrenda remera(){
-        return new TipoPrenda(Categoria.superior);
+    public TipoPrenda remera() {
+        TipoPrenda tipo = new TipoPrenda(Categoria.superior);
+        tipo.agregarTelasDisponibles(new ArrayList<>(Arrays.asList(Tela.algodon,Tela.poliester)));
+        return tipo;
+    }
+
+    public TipoPrenda chomba() {
+        TipoPrenda tipo = new TipoPrenda(Categoria.superior);
+        tipo.agregarTelasDisponibles(new ArrayList<>(Arrays.asList(Tela.algodon,Tela.pique)));
+        return tipo;
     }
 
     public TipoPrenda campera(){
-        return new TipoPrenda(Categoria.superior);
+        TipoPrenda tipo = new TipoPrenda(Categoria.superior);
+        tipo.agregarTelasDisponibles(new ArrayList<>(Arrays.asList(Tela.hilo,Tela.frisa,Tela.microfibra,Tela.rompeviento)));
+        return tipo;
     }
 
     public TipoPrenda buzo(){
-        return new TipoPrenda(Categoria.superior);
+        TipoPrenda tipo = new TipoPrenda(Categoria.superior);
+        tipo.agregarTelasDisponibles(new ArrayList<>(Arrays.asList(Tela.frisa,Tela.microfibra,Tela.algodon,Tela.polar)));
+        return tipo;
+    }
+
+    public TipoPrenda sweater(){
+        TipoPrenda tipo = new TipoPrenda(Categoria.superior);
+        tipo.agregarTelasDisponibles(new ArrayList<>(Arrays.asList(Tela.hilo,Tela.lana)));
+        return tipo;
     }
 
     public TipoPrenda camisa(){
-        return new TipoPrenda(Categoria.superior);
+        TipoPrenda tipo = new TipoPrenda(Categoria.superior);
+        tipo.agregarTelasDisponibles(new ArrayList<>(Arrays.asList(Tela.oxford)));
+        return tipo;
     }
 
     public TipoPrenda pantalon(){
-        return new TipoPrenda(Categoria.inferior);
+        TipoPrenda tipo = new TipoPrenda(Categoria.inferior);
+        tipo.agregarTelasDisponibles(new ArrayList<>(Arrays.asList(Tela.gabardina,Tela.jean,Tela.franela,Tela.acetato)));
+        return tipo;
     }
 
     public TipoPrenda bermuda(){
-        return new TipoPrenda(Categoria.inferior);
+        TipoPrenda tipo = new TipoPrenda(Categoria.inferior);
+        tipo.agregarTelasDisponibles(new ArrayList<>(Arrays.asList(Tela.gabardina,Tela.jean)));
+        return tipo;
     }
 
     public TipoPrenda anteojo(){
-        return new TipoPrenda(Categoria.accesorio);
+        TipoPrenda tipo = new TipoPrenda(Categoria.accesorio);
+        tipo.agregarTelasDisponibles(new ArrayList<>(Arrays.asList(Tela.plastico)));
+        return tipo;
     }
 
-    public TipoPrenda gorra(){
-        return new TipoPrenda(Categoria.accesorio);
+    public TipoPrenda gorra() {
+        TipoPrenda tipo = new TipoPrenda(Categoria.accesorio);
+        tipo.agregarTelasDisponibles(new ArrayList<>(Arrays.asList(Tela.jean,Tela.algodon)));
+        return tipo;
     }
 
-    public TipoPrenda gorro(){
-        return new TipoPrenda(Categoria.accesorio);
+    public TipoPrenda gorro() {
+        TipoPrenda tipo = new TipoPrenda(Categoria.accesorio);
+        tipo.agregarTelasDisponibles(new ArrayList<>(Arrays.asList(Tela.jean,Tela.algodon,Tela.frisa)));
+        return tipo;
     }
 
-    public TipoPrenda zapatos(){
-        return new TipoPrenda(Categoria.calzado);
+    public TipoPrenda zapatos() {
+        TipoPrenda tipo = new TipoPrenda(Categoria.calzado);
+        tipo.agregarTelasDisponibles(new ArrayList<>(Arrays.asList(Tela.cuero)));
+        return tipo;
     }
 
     public TipoPrenda zapatillas(){
-        return new TipoPrenda(Categoria.calzado);
+        TipoPrenda tipo = new TipoPrenda(Categoria.calzado);
+        tipo.agregarTelasDisponibles(new ArrayList<>(Arrays.asList(Tela.lona)));
+        return tipo;
     }
 }

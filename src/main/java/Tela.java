@@ -1,3 +1,3 @@
 public enum Tela {
-    algodon, hilo, neoprene, lona, frisa, plastico, gabardina, cuero, lana
+    algodon, hilo, lona, frisa, plastico, gabardina, cuero, lana, pique, acetato, rompeviento, poliester, microfibra, polar, oxford, franela, jean
 }

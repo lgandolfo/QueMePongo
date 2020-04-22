@@ -8,4 +8,6 @@ public class Atuendo {
     public Atuendo(Set<Prenda> atuendo){
         this.prendas = atuendo;
     }
+
+
 }
