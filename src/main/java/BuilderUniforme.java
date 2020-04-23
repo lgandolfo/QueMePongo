@@ -1,10 +1,8 @@
-public class BuilderUniforme {
+public abstract class BuilderUniforme {
 
-    private Prenda prendaSuperior = null;
-    private Prenda prendaInferior = null;
-    private Prenda prendaCalzado = null;
-    private Prenda prendaAccesorio = null;
-
+    protected Prenda prendaSuperior = null;
+    protected Prenda prendaInferior = null;
+    protected Prenda prendaCalzado = null;
 
     public Prenda getPrendaSuperior() {
         return prendaSuperior;
@@ -18,40 +16,17 @@ public class BuilderUniforme {
         return prendaCalzado;
     }
 
-    public Prenda getPrendaAccesorio() {
-        return prendaAccesorio;
-    }
 
-    public void setPrendaSuperior(Prenda prendaSuperior) throws CreadorUniformeException {
-        validarPrenda(prendaSuperior,Categoria.superior);
-        this.prendaSuperior = prendaSuperior;
-    }
-
-    public void setPrendaInferior(Prenda prendaInferior) throws CreadorUniformeException{
-        validarPrenda(prendaSuperior,Categoria.inferior);
-        this.prendaInferior = prendaInferior;
-    }
-
-    public void setPrendaCalzado(Prenda prendaCalzado) throws CreadorUniformeException{
-        validarPrenda(prendaSuperior,Categoria.calzado);
-        this.prendaCalzado = prendaCalzado;
-    }
-
-    public void setPrendaAccesorio(Prenda prendaAccesorio)throws CreadorUniformeException {
-        validarPrenda(prendaSuperior,Categoria.accesorio);
-        this.prendaAccesorio = prendaAccesorio;
-    }
-
-
-    public Uniforme crearUniforme(){
+    public Uniforme crearUniforme() throws CreadorPrendaException{
+        this.crearPrendaSuperior();
+        this.crearPrendaInferior();
+        this.crearPrendaCalzado();
         Uniforme uniforme = new Uniforme(this);
         return uniforme;
     }
 
-    private void validarPrenda(Prenda prenda, Categoria categoria) throws CreadorUniformeException {
-        if (prenda.categoria() != categoria){
-            throw new CreadorUniformeException("La categoria de la es" + prenda.categoria().toString() + "y la categoria solicitada es " + categoria.toString());
-        }
-    }
+    protected abstract void crearPrendaSuperior() throws CreadorPrendaException;
+    protected abstract void crearPrendaInferior() throws CreadorPrendaException;
+    protected abstract void crearPrendaCalzado() throws CreadorPrendaException;
 
 }

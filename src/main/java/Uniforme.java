@@ -9,6 +9,5 @@ public class Uniforme {
        this.prendaSuperior = builderUniforme.getPrendaSuperior();
        this.prendaInferior = builderUniforme.getPrendaInferior();
        this.prendaCalzado = builderUniforme.getPrendaCalzado();
-       this.prendaAccesorio = builderUniforme.getPrendaAccesorio();
    }
 }
