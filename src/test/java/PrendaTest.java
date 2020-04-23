@@ -5,7 +5,7 @@ public class PrendaTest {
 
     Prenda remeraAlgodon;
     Prenda pantalonNegro;
-    BuilderPrenda builder = new BuilderPrenda();
+    Borrador builder = new Borrador();
     TipoPrenda remera = new TipoPrendaFactory().remera();
     TipoPrenda pantalon = new TipoPrendaFactory().pantalon();
 

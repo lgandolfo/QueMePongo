@@ -4,8 +4,7 @@ import java.util.Objects;
 
 public class Prenda extends Borrador{
 
-
-    public Prenda(BuilderPrenda builder) throws CreadorPrendaException{
+    public Prenda(Borrador builder) throws CreadorPrendaException{
         validarAtributos(new ArrayList<>(Arrays.asList(builder.getTipoPrenda(),builder.getTela(),builder.getColorPrimario(),builder.getTrama())));
         this.tipoPrenda = builder.getTipoPrenda();
         this.tela = builder.getTela();
