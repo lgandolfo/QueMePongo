@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class TipoPrenda {
 
     private Categoria categoria;
+    private int coeficienteAbrigo;
     private ArrayList<Tela> telasDisponibles;
 
     public TipoPrenda(Categoria categoria){
@@ -16,6 +17,10 @@ public class TipoPrenda {
 
     public void agregarTelasDisponibles(ArrayList<Tela> telas){
         this.telasDisponibles = telas;
+    }
+
+    public void setCoeficienteAbrigo(int coeficienteAbrigo){
+        this.coeficienteAbrigo = coeficienteAbrigo;
     }
 
     public ArrayList<Tela> telasDisponibles(){
