@@ -1,15 +1,7 @@
 import java.util.*;
 
-public final class AccuWeatherAPI implements ProveedorClima {
+public final class AccuWeatherAPI {
 
-
-    @Override
-    public double obtenerTemperatura(String ciudad){
-        HashMap<String,Object> datos = (HashMap<String, Object>) this.getWeather(ciudad).get(0).get("Temperature");
-        int temperatura = (int) datos.get("Value");
-        return (temperatura-32)*5/9;
-
-    }
 
     public final List<Map<String, Object>> getWeather(String ciudad) {
         return Arrays.asList(new HashMap(){{

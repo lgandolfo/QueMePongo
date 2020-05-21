@@ -3,7 +3,7 @@ import org.junit.Test;
 
 public class ProveedorClimaTest {
 
-    AccuWeatherAPI accuWeatherAPI = new AccuWeatherAPI();
+    ProveedorClima accuWeatherAPI = new ProveedorClimaAccuWeather();
 
     @Test
     public void obtieneLaTemperaturaCorrecta(){
