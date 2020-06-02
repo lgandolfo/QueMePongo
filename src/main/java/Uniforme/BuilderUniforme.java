@@ -1,3 +1,9 @@
+package Uniforme;
+
+import Prenda.Prenda;
+import Usuario.*;
+import Uniforme.Uniforme;
+
 public abstract class BuilderUniforme {
 
     protected Prenda prendaSuperior = null;
@@ -17,7 +23,7 @@ public abstract class BuilderUniforme {
     }
 
 
-    public Uniforme crearUniforme() throws CreadorPrendaException{
+    public Uniforme crearUniforme() throws CreadorPrendaException {
         this.crearPrendaSuperior();
         this.crearPrendaInferior();
         this.crearPrendaCalzado();

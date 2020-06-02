@@ -1,3 +1,7 @@
+package Prenda;
+
+import Usuario.*;
+
 public class Borrador {
 
     protected TipoPrenda tipoPrenda = null;
@@ -55,7 +59,7 @@ public class Borrador {
         return this;
     }
 
-    public Prenda crearPrenda() throws CreadorPrendaException{
+    public Prenda crearPrenda() throws CreadorPrendaException {
         //creo la prenda con todos los parametros que me dieron
         Prenda nueva = new Prenda(this);
         return nueva;

@@ -1,3 +1,4 @@
+package Clima;
 
 public enum Clima {
     //cada clima tiene un coeficiente para determinar si la sugerencia es apta

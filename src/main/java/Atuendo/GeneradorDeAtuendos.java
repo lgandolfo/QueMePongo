@@ -1,3 +1,6 @@
+package Atuendo;
+
+import Prenda.*;
 import com.google.common.collect.Sets;
 
 import java.util.ArrayList;
@@ -9,7 +12,7 @@ public class GeneradorDeAtuendos {
 
 
         private static GeneradorDeAtuendos generadorDeAtuendos;
-        private ArrayList<Categoria> categoriasObligatorias = new ArrayList<>(Arrays.asList(Categoria.superior,Categoria.inferior,Categoria.calzado));
+        private ArrayList<Categoria> categoriasObligatorias = new ArrayList<>(Arrays.asList(Categoria.superior, Categoria.inferior, Categoria.calzado));
 
 
         public static GeneradorDeAtuendos getSingletonInstance() {

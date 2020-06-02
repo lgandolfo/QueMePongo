@@ -1,3 +1,8 @@
+package Clima;
+
+import Clima.AccuWeatherAPI;
+import Clima.ProveedorClima;
+
 import java.util.HashMap;
 
 public class ProveedorClimaAccuWeather implements ProveedorClima {

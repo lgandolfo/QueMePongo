@@ -1,3 +1,9 @@
+package Uniforme;
+
+import Prenda.*;
+import Usuario.*;
+
+
 public class BuilderUniformeSanJuan extends BuilderUniforme {
     @Override
     protected void crearPrendaSuperior() throws CreadorPrendaException {

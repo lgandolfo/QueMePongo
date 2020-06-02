@@ -1,3 +1,5 @@
+import Clima.ProveedorClima;
+import Clima.ProveedorClimaAccuWeather;
 import org.junit.Assert;
 import org.junit.Test;
 

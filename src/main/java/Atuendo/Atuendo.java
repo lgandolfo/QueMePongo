@@ -1,4 +1,7 @@
-import java.util.ArrayList;
+package Atuendo;
+
+import Prenda.Prenda;
+
 import java.util.Set;
 
 public class Atuendo {

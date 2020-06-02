@@ -1,3 +1,5 @@
+package Clima;
+
 import java.util.*;
 
 public final class AccuWeatherAPI {
