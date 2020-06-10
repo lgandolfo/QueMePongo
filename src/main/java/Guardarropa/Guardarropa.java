@@ -2,14 +2,19 @@ package Guardarropa;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collector;
 
+import Atuendo.*;
 import Prenda.*;
 
 public class Guardarropa {
 
 
-    private List<Prenda> prendas = new ArrayList<>();
+
+    private Set<Prenda> prendas = new HashSet<Prenda>();
     private List<Propuesta> propuestas = new ArrayList<>();
     private List<Propuesta> propuestasAceptadas = new ArrayList<>();
 
@@ -41,7 +46,7 @@ public class Guardarropa {
         prendas.add(prenda);
     }
 
-    public List<Prenda> getPrendas() {
+    public Set<Prenda> getPrendas() {
         return prendas;
     }
 
@@ -53,7 +58,13 @@ public class Guardarropa {
         prendas.add(prenda);
     }
 
+    public Set<Atuendo> crearAtuendos(){
+        return GeneradorDeAtuendos.getSingletonInstance().generarAtuendosValidos(this.prendas);
+    }
 
+    public Atuendo obtenerUnAtuendo(){
+        return (Atuendo) crearAtuendos().stream().toArray()[0];
+    }
 
 
 }

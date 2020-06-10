@@ -1,5 +1,6 @@
 package Clima;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public final class AccuWeatherAPI {
@@ -21,5 +22,12 @@ public final class AccuWeatherAPI {
                 put("UnitType", 18);
             }});
         }});
+    }
+
+    public final Map<String,List<String>> getAlertas(String ciudad){
+        List climas = new ArrayList();
+        climas.add("STORM");
+        climas.add("HAIL");
+        return (Map<String, List<String>>) new HashMap<>().put("Buenos Aires", climas);
     }
 }

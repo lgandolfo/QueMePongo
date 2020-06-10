@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.stream.Collector;
+
 public class GuardarropaTest {
 
     Guardarropa guardarropa;
@@ -28,7 +30,7 @@ public class GuardarropaTest {
         guardarropa.propuestaAgregar(remeraAlgodon);
         Propuesta propuesta = guardarropa.getPropuestas().get(0);
         guardarropa.aplicarPropuesta(propuesta);
-        Assert.assertEquals(remeraAlgodon,guardarropa.getPrendas().get(0));
+        Assert.assertEquals(remeraAlgodon,guardarropa.getPrendas().toArray()[0]);
     }
 
     @Test
@@ -56,6 +58,6 @@ public class GuardarropaTest {
         Propuesta quitar = guardarropa.getPropuestas().get(0);
         guardarropa.aplicarPropuesta(quitar);
         guardarropa.deshacerPropuesta(quitar);
-        Assert.assertEquals(remeraAlgodon,guardarropa.getPrendas().get(0));
+        Assert.assertEquals(remeraAlgodon,guardarropa.getPrendas().toArray()[0]);
     }
 }
