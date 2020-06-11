@@ -18,6 +18,11 @@ public class Usuario {
     private List<Guardarropa> guardarropas = new ArrayList<>();
     private List<Atuendo> sugerenciasDelDia;
 
+    public Usuario(){
+        RepositorioUsuarios.getInstance().setUsuariosActivos(this);
+    }
+
+
 
     public void obtenerSugerencias(){
          sugerenciasDelDia = guardarropas.stream().map(Guardarropa::obtenerUnAtuendo).collect(Collectors.toList());
