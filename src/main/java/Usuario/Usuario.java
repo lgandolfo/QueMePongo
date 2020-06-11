@@ -2,13 +2,11 @@ package Usuario;
 
 
 import Atuendo.Atuendo;
+
 import Guardarropa.Guardarropa;
 import Prenda.*;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Usuario {
@@ -17,6 +15,7 @@ public class Usuario {
     private Borrador borrador;
     private List<Guardarropa> guardarropas = new ArrayList<>();
     private List<Atuendo> sugerenciasDelDia;
+    private List<Observer> interesados = new ArrayList<>();
 
     public Usuario(){
         RepositorioUsuarios.getInstance().setUsuariosActivos(this);
@@ -36,5 +35,7 @@ public class Usuario {
         return sugerenciasDelDia;
     }
 
-
+    public void seActualizaronAlertas(List<String> alertas){
+        interesados.forEach(interesado -> interesado.generarAlerta(alertas));
+    }
 }

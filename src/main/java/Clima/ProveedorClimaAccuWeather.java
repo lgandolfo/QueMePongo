@@ -1,5 +1,8 @@
 package Clima;
 
+import Usuario.Observer;
+import Usuario.RepositorioUsuarios;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,7 +10,7 @@ import java.util.List;
 public class ProveedorClimaAccuWeather implements ProveedorClima {
 
     private AccuWeatherAPI accuWeatherAPI = new AccuWeatherAPI();
-    private List<ObserverClima> observerClimas = new ArrayList<ObserverClima>();
+
 
 
     @Override
@@ -21,12 +24,10 @@ public class ProveedorClimaAccuWeather implements ProveedorClima {
 
     public List<String> obtenerAlertas(String ciudad){
         List<String> alertas = accuWeatherAPI.getAlertas(ciudad).get(ciudad);
-        observerClimas.stream().forEach(observerClima -> observerClima.generarAlerta(alertas));
+        RepositorioUsuarios.getInstance().getUsuariosActivos().forEach(usuario -> usuario.seActualizaronAlertas(alertas));
         return alertas;
 
     }
 
-    public void setObserverClimas(ObserverClima observerClima){
-        observerClimas.add(observerClima);
-    }
+
 }

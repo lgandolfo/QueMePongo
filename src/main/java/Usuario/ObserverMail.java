@@ -1,8 +1,10 @@
-package Clima;
+package Usuario;
+
+
 
 import java.util.List;
 
-public class ObserverMail implements ObserverClima {
+public class ObserverMail implements Observer {
 
     private String direccionMail;
     private MailSender mailSender;
@@ -10,5 +12,5 @@ public class ObserverMail implements ObserverClima {
     @Override
     public void generarAlerta(List<String> alertas){
         mailSender.send(direccionMail,alertas);
-    };
+    }
 }

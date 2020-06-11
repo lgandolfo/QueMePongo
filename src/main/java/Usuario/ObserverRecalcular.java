@@ -1,10 +1,10 @@
-package Clima;
+package Usuario;
 
 import Usuario.*;
 
 import java.util.List;
 
-public class ObserverRecalcular implements ObserverClima {
+public class ObserverRecalcular implements Observer {
 
     @Override
     public void generarAlerta(List<String> alertas){

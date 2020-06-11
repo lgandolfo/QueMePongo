@@ -16,13 +16,15 @@ public class RepositorioUsuarios {
     }
 
      public void ejecutarSugerencias(){
-        usuariosActivos.stream().forEach(Usuario::obtenerSugerencias);
+        usuariosActivos.forEach(Usuario::obtenerSugerencias);
      }
 
      public void setUsuariosActivos(Usuario usuario){
         usuariosActivos.add(usuario);
      }
 
-
+    public List<Usuario> getUsuariosActivos(){
+        return usuariosActivos;
+    }
 
 }
