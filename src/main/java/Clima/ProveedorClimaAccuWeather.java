@@ -20,7 +20,10 @@ public class ProveedorClimaAccuWeather implements ProveedorClima {
     }
 
     public List<String> obtenerAlertas(String ciudad){
-        return accuWeatherAPI.getAlertas(ciudad).get(ciudad);
+        List<String> alertas = accuWeatherAPI.getAlertas(ciudad).get(ciudad);
+        observerClimas.stream().forEach(observerClima -> observerClima.generarAlerta(alertas));
+        return alertas;
+
     }
 
     public void setObserverClimas(ObserverClima observerClima){
